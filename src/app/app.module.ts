@@ -5,16 +5,25 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { ProductListComponent } from './products/product-list.component';
+import { ProductService } from './products/product.service';
+
+import { ProductFilterPipe } from './products/product-filter.pipe';
+import { StarComponent } from './shared/star.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent,
+    ProductFilterPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
