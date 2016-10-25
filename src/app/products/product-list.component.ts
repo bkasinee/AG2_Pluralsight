@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
     listFilter: string;
     products: IProduct[];
 
-    constructor(private productService: ProductService){
+    constructor(private _productService: ProductService){
         
     }
     
@@ -29,7 +29,9 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.products = this.productService.getProducts();
+        this._productService.getProducts()
+        .subscribe(
+            products => this.products = products)
     }
 
     onRatingClicked(message: string){
