@@ -10,18 +10,29 @@ import { ProductService } from './products/product.service';
 
 import { ProductFilterPipe } from './products/product-filter.pipe';
 import { StarComponent } from './shared/star.component';
+import { ProductDetailComponent } from './products/product-detail.component';
+
+import { RouterModule } from '@angular/router';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductFilterPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([      
+      { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
+      { path: '/products', name: 'Products', component: ProductListComponent }
+    ])
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
