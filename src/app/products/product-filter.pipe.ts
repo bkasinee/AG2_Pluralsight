@@ -11,4 +11,5 @@ export class ProductFilterPipe implements PipeTransform {
         return filter ? value.filter((product: IProduct) =>
             product.productName.toLocaleLowerCase().indexOf(filter) != -1) : value;
     }
+
 }

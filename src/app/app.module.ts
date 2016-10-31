@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { ProductListComponent } from './products/product-list.component';
+
 import { ProductService } from './products/product.service';
 
 import { ProductFilterPipe } from './products/product-filter.pipe';
@@ -13,6 +13,11 @@ import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 
 import { RouterModule } from '@angular/router';
+import { AG2PluralsightRoutingModule } from './app-routing.module';
+
+import { ProductListComponent } from './products/product-list.component';
+import { WelcomeComponent } from './home/welcome.component';
+
 
 
 
@@ -23,16 +28,14 @@ import { RouterModule } from '@angular/router';
     ProductListComponent,
     ProductFilterPipe,
     StarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([      
-      { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
-      { path: '/products', name: 'Products', component: ProductListComponent }
-    ])
+    AG2PluralsightRoutingModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
